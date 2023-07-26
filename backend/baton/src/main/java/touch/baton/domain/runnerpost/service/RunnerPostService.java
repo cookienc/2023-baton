@@ -43,7 +43,7 @@ public class RunnerPostService {
         final RunnerPost runnerPost = toDomain(runner, request);
         runnerPostRepository.save(runnerPost);
 
-        List<Tag> toSaveTags = new ArrayList<>();
+        final List<Tag> toSaveTags = new ArrayList<>();
         for (final String tagName : request.tags()) {
             final Optional<Tag> maybeTag = tagRepository.findByTagName(new TagName(tagName));
 
@@ -93,7 +93,7 @@ public class RunnerPostService {
 
         runnerPostRepository.save(runnerPost);
 
-        List<Tag> toSaveTags = new ArrayList<>();
+        final List<Tag> toSaveTags = new ArrayList<>();
         for (final String tagName : request.tags()) {
             final Optional<Tag> maybeTag = tagRepository.findByTagName(new TagName(tagName));
 
